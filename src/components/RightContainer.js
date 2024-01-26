@@ -47,7 +47,6 @@ const RightContainer = () => {
 				.then((userCredential) => {
 					const user = userCredential.user;
 					navigate("/home")
-					console.log(user);
 				})
 				.catch((error) => {
 					const errorCode = error.code;
@@ -85,7 +84,7 @@ const RightContainer = () => {
 						<label className='text-black font-semibold text-sm'>Password</label>
 						<input ref={password} type="password" placeholder='••••••••' className='bg-[#EAEAEA] p-2 my-1 w-full rounded-lg text-black' />
 					</div>
-					{errorMessage && <p className='text-red-500 font-semibold text-lg py-3'>{errorMessage}</p>}
+					{errorMessage && <p className='text-red-500 font-semibold py-3'>{errorMessage}</p>}
 					{isSignInForm && <p className='py-1 text-sm cursor-pointer text-[#605BFF]'>Forgot password?</p>}
 					<button className='p-2 my-4 bg-[#605BFF] w-full rounded-lg text-white font-bold text-lg' onClick={handleButtonClick}>{isSignInForm ? "Sign In" : "Sign Up"}</button>
 				</div>
